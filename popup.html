@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Player</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="player">
+      <h2>Emo Player</h2>
+      <img src="icons/icon.png" id="audioImage" />
+      <div id="seekControl">
+        <input type="range" id="seekBar" min="0" max="100" step="1" value="0">
+        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+      </div>
+      <audio id="audioPlayer" controls style="opacity: 0;">
+        <source id="audioSource" src="" type="audio/mpeg" >
+        Your browser does not support the audio element.
+      </audio>
+      <div id="controls">
+        <button id="prev"><i class="fas fa-backward"></i></button>
+        <button id="playPause"><i class="fas fa-pause"></i></button>
+        <button id="next"><i class="fas fa-forward"></i></button>
+        <button id="shuffle"><i class="fas fa-random"></i></button>
+        <button id="repeat"><i class="fas fa-redo"></i></button>
+        <button id="darkModeToggle"><i class="fas fa-moon"></i></button>
+      </div>
+      <div id="volumeControl">
+        <label for="volumeSlider">Volume: </label>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+      </div>
+  
+      <div id="trackInfo">
+        <p id="trackName">Track Name</p>
+        <p id="artistAlbum">Artist - Album</p>
+      </div>
+      <div id="visualizer">
+        <canvas id="visualizerCanvas"></canvas>
+      </div>
+      <div id="playlist">
+        <ul id="trackList"></ul>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
